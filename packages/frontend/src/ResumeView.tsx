@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { ContactCard } from "./ContactCard";
+import type { WorkHistoryItemProps } from "./WorkHistoryItem";
+import { WorkHistoryItem } from "./WorkHistoryItem";
 
 interface ResumeViewProps {}
 
@@ -14,6 +16,20 @@ const ResumeViewContainer = styled.div`
 const ResumeViewContent = styled.div`
   grid-column: 2/3;
 `;
+
+const WorkHistoryItems: WorkHistoryItemProps[] = [
+  {
+    company: "Nuvolo",
+    title: "Software Engineer II",
+    start: "12/2018",
+  },
+  {
+    company: "Domo Inc.",
+    title: "IT Solutions Architect",
+    start: "05/2017",
+    end: "12/2018",
+  },
+];
 
 export const ResumeView = (props: ResumeViewProps): JSX.Element => {
   return (
@@ -31,7 +47,9 @@ export const ResumeView = (props: ResumeViewProps): JSX.Element => {
         <h2>Skills</h2>
         <p>... some skills component</p>
         <h2>Work History</h2>
-        <p>... some work history component</p>
+        {WorkHistoryItems.map((historyItem) => (
+          <WorkHistoryItem {...historyItem} />
+        ))}
         <h2>Education</h2>
         <p>BS IN IT....</p>
         <h2>Open Source</h2>
