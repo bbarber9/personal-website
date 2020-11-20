@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import profile from "./profile.jpg";
+import profile from "./images/profile.jpg";
 
 interface ContactCardProps {}
 
