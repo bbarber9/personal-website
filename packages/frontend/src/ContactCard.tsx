@@ -16,7 +16,6 @@ const ImgSection = styled.div`
   grid-column: 1/2;
   display: flex;
   align-items: center;
-  justify-content: center;
 `;
 
 const CardImg = styled.img`
@@ -29,7 +28,10 @@ const CardImg = styled.img`
 const InfoSection = styled.div`
   grid-column: 2/3;
   height: 100%;
-  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ContactCard = (props: ContactCardProps): JSX.Element => {
@@ -41,7 +43,6 @@ export const ContactCard = (props: ContactCardProps): JSX.Element => {
       <InfoSection>
         <h1>Breyton Barber</h1>
         <h2>Software Engineer</h2>
-        <h3>Driven professional engineering</h3>
       </InfoSection>
     </CardContainer>
   );
