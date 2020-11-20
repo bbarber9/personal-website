@@ -7,6 +7,7 @@ interface ColorMap {
 interface ThemeColors {
   text: ColorMap;
   primary: ColorMap;
+  layout: ColorMap;
 }
 
 interface ThemeElevation {
@@ -26,6 +27,11 @@ export const theme: ResumeTheme = {
       dark: "#2B5297",
       normal: "#4C7BCD",
       light: "#71A5FE",
+    },
+    layout: {
+      dark: "#EAEBF2",
+      normal: "white",
+      light: "white",
     },
   },
   elevation: {
