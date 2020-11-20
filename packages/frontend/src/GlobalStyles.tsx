@@ -6,8 +6,18 @@ export const GlobalStyles = createGlobalStyle`
     height:100%;
     margin:0;
     font-family: sans-serif;
+    color: ${({ theme }) => theme.colors.text.normal};
   }
   *{
     box-sizing:border-box;
+  }
+  h1 {
+    font-weight:normal;
+  }
+  h2 {
+    font-weight:normal;
+  }
+  h3 {
+    font-weight:normal;
   }
 `;

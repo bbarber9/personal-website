@@ -11,10 +11,11 @@ const NavBarContainer = styled.div<NavBarContainerProps>`
   flex-direction: row;
   align-items: center;
   padding-left: 10px;
-  height: 40px;
+  height: 60px;
   width: 100%;
   background-color: white;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 18px;
   box-shadow: ${({ shadow }) =>
     shadow ? "0px 0px 5px rgba(0,0,0,0.5)" : "none"};
 `;

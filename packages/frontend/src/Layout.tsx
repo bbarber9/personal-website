@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { ContactCard } from "./ContactCard";
 import { NavBar } from "./NavBar";
 
 interface LayoutProps {}
 
 const LayoutContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   height: 100%;
 `;
 
@@ -16,7 +17,7 @@ const MainArea = styled.div`
   grid-column: 2/3;
   grid-row: 1/2;
   height: 100%;
-  padding-top: 40px;
+  padding-top: 60px;
 `;
 
 export const Layout = (props: LayoutProps): JSX.Element => {
@@ -24,7 +25,9 @@ export const Layout = (props: LayoutProps): JSX.Element => {
     <>
       <NavBar />
       <LayoutContainer>
-        <MainArea>HELLO WORLD</MainArea>
+        <MainArea>
+          <ContactCard />
+        </MainArea>
       </LayoutContainer>
     </>
   );
