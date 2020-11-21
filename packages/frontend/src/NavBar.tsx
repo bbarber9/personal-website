@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import BebasNeue from "./fonts/Bebas_Neue/BebasNeue-Regular.ttf";
 
 interface NavBarProps {}
 interface NavBarContainerProps {
@@ -14,22 +15,36 @@ const NavBarContainer = styled.div<NavBarContainerProps>`
   height: 60px;
   width: 100%;
   background-color: white;
-  font-weight: 400;
   font-size: 18px;
   box-shadow: ${({ shadow }) =>
     shadow ? "0px 0px 5px rgba(0,0,0,0.5)" : "none"};
 `;
 
+const LogoText = styled.span`
+  font-family: "Share Tech Mono";
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -2px;
+`;
+
 export const NavBar = (props: NavBarProps): JSX.Element => {
-  const [scrollPos, setScrollPos] = useState(0);
+  const [showShadow, setShowShadow] = useState(false);
   useEffect(() => {
     const listener = () => {
-      setScrollPos(window.scrollY);
+      if (window.scrollY > 0) {
+        setShowShadow(true);
+        return;
+      }
+      setShowShadow(false);
     };
     window.addEventListener("scroll", listener);
     return () => {
       window.removeEventListener("scroll", listener);
     };
   });
-  return <NavBarContainer shadow={scrollPos > 0}>My Resume</NavBarContainer>;
+  return (
+    <NavBarContainer shadow={showShadow}>
+      <LogoText>barber.dev</LogoText>
+    </NavBarContainer>
+  );
 };
