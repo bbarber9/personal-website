@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ContactCard } from "./ContactCard";
 import { NavBar } from "./NavBar";
 import { ResumeView } from "./ResumeView";
+import { AboutView } from "./AboutView";
 
 interface LayoutProps {}
 
@@ -26,6 +27,9 @@ export const Layout = (props: LayoutProps): JSX.Element => {
         <MainArea>
           <Switch>
             <Route exact path="/">
+              <AboutView />
+            </Route>
+            <Route path="/resume">
               <ResumeView />
             </Route>
           </Switch>

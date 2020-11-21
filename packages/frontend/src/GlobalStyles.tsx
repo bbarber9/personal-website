@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     height:100%;
     margin:0;
     font-family: 'Poppins';
+    font-size: 18px;
     color: ${({ theme }) => theme.colors.text.normal};
   }
   *{
@@ -19,5 +20,15 @@ export const GlobalStyles = createGlobalStyle`
   }
   h3 {
     font-weight:normal;
+  }
+  a {
+    text-decoration:none;
+    color: ${({ theme }) => theme.colors.primary.normal};
+    padding:5px;
+    border-radius:3px;
+    font-weight:bold;
+    :hover {
+      background-color: ${({ theme }) => theme.colors.layout.dark};
+    }
   }
 `;

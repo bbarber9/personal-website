@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import BebasNeue from "./fonts/Bebas_Neue/BebasNeue-Regular.ttf";
+import { Link } from "react-router-dom";
 
 interface NavBarProps {}
 interface NavBarContainerProps {
@@ -11,6 +11,7 @@ const NavBarContainer = styled.div<NavBarContainerProps>`
   position: fixed;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding-left: 10px;
   height: 60px;
   width: 100%;
@@ -25,6 +26,13 @@ const LogoText = styled.span`
   font-weight: bold;
   font-size: 30px;
   letter-spacing: -2px;
+`;
+
+const LinkSpace = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  padding-right: 10px;
 `;
 
 export const NavBar = (props: NavBarProps): JSX.Element => {
@@ -44,7 +52,11 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
   });
   return (
     <NavBarContainer shadow={showShadow}>
-      <LogoText>barber.dev</LogoText>
+      <LogoText>breyton.dev</LogoText>
+      <LinkSpace>
+        <Link to="/">About</Link>
+        <Link to="/resume">Resume</Link>
+      </LinkSpace>
     </NavBarContainer>
   );
 };
