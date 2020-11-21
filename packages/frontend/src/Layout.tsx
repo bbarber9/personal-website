@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
-import { ResumeView } from "./ResumeView";
+// import { ResumeView } from "./ResumeView";
 import { AboutView } from "./AboutView";
 
 interface LayoutProps {}
@@ -28,9 +28,9 @@ export const Layout = (props: LayoutProps): JSX.Element => {
             <Route exact path="/">
               <AboutView />
             </Route>
-            <Route path="/resume">
+            {/* <Route path="/resume">
               <ResumeView />
-            </Route>
+            </Route> */}
           </Switch>
         </MainArea>
       </BrowserRouter>

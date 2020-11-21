@@ -55,7 +55,7 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
       <LogoText>breyton.dev</LogoText>
       <LinkSpace>
         <Link to="/">About</Link>
-        <Link to="/resume">Resume</Link>
+        {/* <Link to="/resume">Resume</Link> */}
       </LinkSpace>
     </NavBarContainer>
   );
