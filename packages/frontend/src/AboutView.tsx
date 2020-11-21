@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { darken } from "polished";
+import ProfilePic from "./images/ProfilePic.jpeg";
 
 interface AboutViewProps {}
 
@@ -34,12 +35,43 @@ const CenterContent = styled.div`
   grid-column: 2/3;
 `;
 
+const FlexHeader = styled.div`
+  display: grid;
+  align-items: center;
+  grid-template-areas: "title image";
+  @media (max-width: 768px) {
+    grid-template-areas:
+      "title"
+      "image";
+  }
+`;
+
+const FlexTitle = styled.h1`
+  margin: 10px;
+  @media (max-width: 768px) {
+    justify-self: center;
+    align-self: center;
+  }
+`;
+
+const FlexImg = styled.img`
+  justify-self: center;
+  align-self: center;
+  max-height: 300px;
+  object-fit: cover;
+  padding: 15px;
+  border-radius: 40px;
+`;
+
 export const AboutView = (props: AboutViewProps): JSX.Element => {
   return (
     <>
       <CenterContentContainer>
         <CenterContent>
-          <h1>Hi! I'm Breyton 👋</h1>
+          <FlexHeader>
+            <FlexTitle>Hi! I'm Breyton 👋</FlexTitle>
+            <FlexImg src={ProfilePic} />
+          </FlexHeader>
           <LargeGreenSection>
             I'm a computer nerd who loves to make people's lives easier with
             software 🤓

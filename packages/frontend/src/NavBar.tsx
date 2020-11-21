@@ -19,13 +19,14 @@ const NavBarContainer = styled.div<NavBarContainerProps>`
   font-size: 18px;
   box-shadow: ${({ shadow }) =>
     shadow ? "0px 0px 5px rgba(0,0,0,0.5)" : "none"};
+  transition: box-shadow 0.05s ease-in;
 `;
 
 const LogoText = styled.span`
   font-family: "Share Tech Mono";
   font-weight: bold;
   font-size: 30px;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 `;
 
 const LinkSpace = styled.div`
@@ -39,11 +40,11 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
   const [showShadow, setShowShadow] = useState(false);
   useEffect(() => {
     const listener = () => {
-      if (window.scrollY > 0) {
-        setShowShadow(true);
+      if (window.scrollY <= 0) {
+        setShowShadow(false);
         return;
       }
-      setShowShadow(false);
+      setShowShadow(true);
     };
     window.addEventListener("scroll", listener);
     return () => {
