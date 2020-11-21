@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import profile from "./images/profile.jpg";
-import { PhotoHeading } from "./PhotoHeading";
 
 interface AboutViewProps {}
 

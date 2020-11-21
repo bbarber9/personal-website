@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { ContactCard } from "./ContactCard";
 import type { WorkHistoryItemProps } from "./WorkHistoryItem";
 import { WorkHistoryItem } from "./WorkHistoryItem";
 
 interface ResumeViewProps {}
 
-const ResumeViewContainer = styled.div`
+const CenterContentContainer = styled.div`
   height: 100%;
   min-height: 1px;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 10px auto 10px;
+  }
 `;
 
-const ResumeViewContent = styled.div`
+const CenterContent = styled.div`
   grid-column: 2/3;
 `;
 
@@ -33,9 +35,8 @@ const WorkHistoryItems: WorkHistoryItemProps[] = [
 
 export const ResumeView = (props: ResumeViewProps): JSX.Element => {
   return (
-    <ResumeViewContainer>
-      <ResumeViewContent>
-        <ContactCard />
+    <CenterContentContainer>
+      <CenterContent>
         <h2 id="professional-summary">Professional Summary</h2>
         <p>
           Driven software engineer with a passion for user experience, design,
@@ -58,7 +59,7 @@ export const ResumeView = (props: ResumeViewProps): JSX.Element => {
         <p>...interests</p>
         <h2>This site is made with</h2>
         <p>Some cool info</p>
-      </ResumeViewContent>
-    </ResumeViewContainer>
+      </CenterContent>
+    </CenterContentContainer>
   );
 };

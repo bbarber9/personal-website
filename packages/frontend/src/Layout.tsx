@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { ContactCard } from "./ContactCard";
 import { NavBar } from "./NavBar";
 import { ResumeView } from "./ResumeView";
 import { AboutView } from "./AboutView";
