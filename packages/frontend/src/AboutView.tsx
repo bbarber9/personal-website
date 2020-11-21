@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { darken } from "polished";
 
 interface AboutViewProps {}
 
@@ -15,6 +16,8 @@ const LargeGreenSection = styled.div`
   font-size: 1.3rem;
   border-radius: 5px;
   color: white;
+  box-shadow: -3px 3px
+    ${({ theme }) => darken(0.1, theme.colors.primary.normal)};
 `;
 
 const CenterContentContainer = styled.div`
