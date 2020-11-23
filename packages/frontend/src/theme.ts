@@ -1,13 +1,21 @@
 interface ColorMap {
+  dark4: string;
+  dark3: string;
+  dark2: string;
   dark: string;
-  normal: string;
+  base: string;
   light: string;
+  light2: string;
+  light3: string;
+  light4: string;
 }
 
 interface ThemeColors {
-  text: ColorMap;
+  neutral: ColorMap;
   primary: ColorMap;
-  layout: ColorMap;
+  accent: ColorMap;
+  error: ColorMap;
+  warn: ColorMap;
 }
 
 interface ThemeElevation {
@@ -15,24 +23,33 @@ interface ThemeElevation {
   high: string;
 }
 
-export interface ResumeTheme {
+const fillColorMap = (colors: Partial<ColorMap>): ColorMap => {
+  const emptyMap: ColorMap = {
+    dark4: "white",
+    dark3: "white",
+    dark2: "white",
+    dark: "white",
+    base: "white",
+    light: "white",
+    light2: "white",
+    light3: "white",
+    light4: "white",
+  };
+  return { ...emptyMap, ...colors };
+};
+
+export interface PersonalTheme {
   colors: ThemeColors;
   elevation: ThemeElevation;
 }
 
-export const theme: ResumeTheme = {
+export const theme: PersonalTheme = {
   colors: {
-    text: { dark: "#0F0F10", normal: "#272635", light: "#808189" },
-    primary: {
-      dark: "",
-      normal: "hsl(143,92%,35%)",
-      light: "#71A5FE",
-    },
-    layout: {
-      dark: "#EAEBF2",
-      normal: "white",
-      light: "white",
-    },
+    neutral: fillColorMap({}),
+    primary: fillColorMap({}),
+    accent: fillColorMap({}),
+    error: fillColorMap({}),
+    warn: fillColorMap({}),
   },
   elevation: {
     high: "",

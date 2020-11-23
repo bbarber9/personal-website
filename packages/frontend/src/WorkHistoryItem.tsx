@@ -13,11 +13,11 @@ const JobTitle = styled.span`
 `;
 
 const CompanyTitle = styled.span`
-  color: ${({ theme }) => theme.colors.primary.normal};
+  color: ${({ theme }) => theme.colors.primary.base};
 `;
 
 const TimeStamp = styled.span`
-  color: ${({ theme }) => theme.colors.text.light};
+  color: ${({ theme }) => theme.colors.neutral.light};
 `;
 
 const Header = styled.div`

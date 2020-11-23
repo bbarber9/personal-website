@@ -6,7 +6,7 @@ import ProfilePic from "./images/ProfilePic.jpeg";
 interface AboutViewProps {}
 
 const LargeGreenSection = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary.normal};
+  background-color: ${({ theme }) => theme.colors.primary.base};
   width: 100%;
   padding: 20px;
   display: flex;
@@ -17,8 +17,7 @@ const LargeGreenSection = styled.div`
   font-size: 1.3rem;
   border-radius: 5px;
   color: white;
-  box-shadow: -3px 3px
-    ${({ theme }) => darken(0.1, theme.colors.primary.normal)};
+  box-shadow: -3px 3px ${({ theme }) => darken(0.1, theme.colors.primary.base)};
 `;
 
 const CenterContentContainer = styled.div`

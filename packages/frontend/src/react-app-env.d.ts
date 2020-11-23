@@ -1,7 +1,7 @@
 /// <reference types="react-scripts" />
 import "styled-components";
-import { ResumeTheme } from "./theme";
+import type { PersonalTheme } from "./theme";
 
 declare module "styled-components" {
-  export interface DefaultTheme extends ResumeTheme {}
+  export interface DefaultTheme extends PersonalTheme {}
 }

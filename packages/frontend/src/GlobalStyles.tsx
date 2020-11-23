@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     margin:0;
     font-family: 'Poppins';
     font-size: 18px;
-    color: ${({ theme }) => theme.colors.text.normal};
+    color: ${({ theme }) => theme.colors.neutral.base};
   }
   *{
     box-sizing:border-box;
@@ -23,12 +23,12 @@ export const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration:none;
-    color: ${({ theme }) => theme.colors.primary.normal};
+    color: ${({ theme }) => theme.colors.primary.base};
     padding:5px;
     border-radius:3px;
     font-weight:bold;
     :hover {
-      background-color: ${({ theme }) => theme.colors.layout.dark};
+      background-color: ${({ theme }) => theme.colors.neutral.dark};
     }
   }
 `;
