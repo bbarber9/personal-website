@@ -28,6 +28,7 @@ const FlexHeader = styled.div`
       "title"
       "image";
   }
+  padding-bottom: 10px;
 `;
 
 const FlexTitle = styled.h1`
@@ -43,8 +44,7 @@ const FlexImg = styled.img`
   align-self: center;
   max-height: 300px;
   object-fit: cover;
-  padding: 15px;
-  border-radius: 40px;
+  border-radius: 5px;
 `;
 
 export const AboutView = (props: AboutViewProps): JSX.Element => {
@@ -56,7 +56,7 @@ export const AboutView = (props: AboutViewProps): JSX.Element => {
       </FlexHeader>
       <LargeGreenSection>
         I'm a computer nerd who loves to make people's lives easier with
-        software 🤓
+        software.
       </LargeGreenSection>
       <h2>I graduated from Brigham Young University 🎓</h2>
       <p>
