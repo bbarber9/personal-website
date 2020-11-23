@@ -1,23 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import type { WorkHistoryItemProps } from "./WorkHistoryItem";
-import { WorkHistoryItem } from "./WorkHistoryItem";
+import { WorkHistory } from "./WorkHistory";
 
 interface ResumeViewProps {}
-
-const WorkHistoryItems: WorkHistoryItemProps[] = [
-  {
-    company: "Nuvolo",
-    title: "Software Engineer II",
-    start: "12/2018",
-  },
-  {
-    company: "Domo Inc.",
-    title: "IT Solutions Architect",
-    start: "05/2017",
-    end: "12/2018",
-  },
-];
 
 export const ResumeView = (props: ResumeViewProps): JSX.Element => {
   return (
@@ -31,19 +16,24 @@ export const ResumeView = (props: ResumeViewProps): JSX.Element => {
         solve them.
       </p>
       <h2>Skills</h2>
-      <p>... some skills component</p>
+      <h3>Web Languages</h3>
+      <p>TypeScript, Javascript (Browser + Node.js), HTML, CSS</p>
+      <h3>Web Frameworks</h3>
+      <p>React, Redux, AngularJS, Express, Styled Components</p>
+      <h3>Tooling</h3>
+      <p>
+        Webpack, Lerna, Babel, TypeScript, Git/Github, ESLint, Prettier, NPM
+      </p>
+      <h3>Leadership</h3>
+      <p>
+        Determining and managing scope, Communicating technical topics in a
+        non-technical manner, Breaking down large problems
+      </p>
       <h2>Work History</h2>
-      {WorkHistoryItems.map((historyItem) => (
-        <WorkHistoryItem {...historyItem} />
-      ))}
+      <WorkHistory />
       <h2>Education</h2>
-      <p>BS IN IT....</p>
-      <h2>Open Source</h2>
-      <p>....projects</p>
-      <h2>Personal Interests</h2>
-      <p>...interests</p>
-      <h2>This site is made with</h2>
-      <p>Some cool info</p>
+      <h3>Brigham Young University</h3>
+      <p>Bachelor of Science: Information Technology</p>
     </>
   );
 };

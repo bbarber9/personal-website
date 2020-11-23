@@ -18,18 +18,22 @@ export const GlobalStyles = createGlobalStyle`
   }
   h2 {
     font-weight:normal;
+    margin: 20px 0px;
+    border-bottom:  2px solid ${({ theme }) => theme.colors.primary.base};
   }
   h3 {
-    font-weight:normal;
+    font-weight:300;
+    margin-bottom:0px;
+    color:${({ theme }) => theme.colors.primary.base};
+  }
+  h4 {
+    margin: 10px 0px;
+  }
+  p {
+    margin: 5px 0px; 
   }
   a {
     text-decoration:none;
     color: ${({ theme }) => theme.colors.primary.base};
-    padding:5px;
-    border-radius:3px;
-    font-weight:bold;
-    :hover {
-      background-color: ${({ theme }) => theme.colors.neutral.dark4};
-    }
   }
 `;

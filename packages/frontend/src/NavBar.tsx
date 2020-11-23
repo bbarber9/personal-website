@@ -6,7 +6,7 @@ interface NavBarProps {}
 interface NavBarContainerProps {
   shadow: boolean;
 }
-const NavBarContainer = styled.div<NavBarContainerProps>`
+const NavBarContainer = styled.nav<NavBarContainerProps>`
   display: flex;
   position: fixed;
   flex-direction: row;
@@ -56,7 +56,7 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
       <LogoText>breyton.dev</LogoText>
       <LinkSpace>
         <Link to="/">About</Link>
-        {/* <Link to="/resume">Resume</Link> */}
+        <Link to="/resume">Resume</Link>
       </LinkSpace>
     </NavBarContainer>
   );
