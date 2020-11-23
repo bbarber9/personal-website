@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { darken } from "polished";
 import ProfilePic from "./images/ProfilePic.jpeg";
 
 interface AboutViewProps {}
@@ -16,8 +15,8 @@ const LargeGreenSection = styled.div`
   font-weight: bold;
   font-size: 1.3rem;
   border-radius: 5px;
-  color: white;
-  box-shadow: -3px 3px ${({ theme }) => darken(0.1, theme.colors.primary.base)};
+  color: ${({ theme }) => theme.colors.neutral.light4};
+  box-shadow: -3px 3px ${({ theme }) => theme.colors.primary.dark2};
 `;
 
 const CenterContentContainer = styled.div`

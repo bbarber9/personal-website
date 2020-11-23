@@ -15,7 +15,7 @@ const NavBarContainer = styled.div<NavBarContainerProps>`
   padding-left: 10px;
   height: 60px;
   width: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.neutral.light4};
   font-size: 18px;
   box-shadow: ${({ shadow }) =>
     shadow ? "0px 0px 5px rgba(0,0,0,0.5)" : "none"};

@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 // import { ResumeView } from "./ResumeView";
 import { AboutView } from "./AboutView";
+import { ColorPalette } from "./ColorPalette";
 
 interface LayoutProps {}
 
@@ -27,6 +28,9 @@ export const Layout = (props: LayoutProps): JSX.Element => {
           <Switch>
             <Route exact path="/">
               <AboutView />
+            </Route>
+            <Route path="/theme">
+              <ColorPalette />
             </Route>
             {/* <Route path="/resume">
               <ResumeView />

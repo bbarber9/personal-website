@@ -7,7 +7,8 @@ export const GlobalStyles = createGlobalStyle`
     margin:0;
     font-family: 'Poppins';
     font-size: 18px;
-    color: ${({ theme }) => theme.colors.neutral.base};
+    color: ${({ theme }) => theme.colors.neutral.dark4};
+    background-color:${({ theme }) => theme.colors.neutral.light4};
   }
   *{
     box-sizing:border-box;
@@ -28,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     border-radius:3px;
     font-weight:bold;
     :hover {
-      background-color: ${({ theme }) => theme.colors.neutral.dark};
+      background-color: ${({ theme }) => theme.colors.neutral.dark4};
     }
   }
 `;
