@@ -85,6 +85,11 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
   const [useHamburger, setUseHamburger] = useState(
     window.innerWidth < MOBILE_THRESHOLD
   );
+
+  const links = [
+    ["/", "About"],
+    ["/resume", "Resume"],
+  ];
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   // Add shadow on scroll
   useEffect(() => {
@@ -126,12 +131,13 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
       >
         <MenuItemContainer>
           <MenuHeader>Quick Links</MenuHeader>
-          <MenuItem>
-            <Link to="/">About</Link>
-          </MenuItem>
-          <MenuItem>
-            <Link to="/resume">Resume</Link>
-          </MenuItem>
+          {links.map((link) => {
+            return (
+              <MenuItem key={link[0]}>
+                <Link to={link[0]}>{link[1]}</Link>
+              </MenuItem>
+            );
+          })}
         </MenuItemContainer>
       </SideDrawer>
       {useHamburger ? (
@@ -146,8 +152,9 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
         </>
       ) : (
         <LinkSpace>
-          <Link to="/">About</Link>
-          <Link to="/resume">Resume</Link>
+          {links.map((link) => (
+            <Link to={link[0]}>{link[1]}</Link>
+          ))}
         </LinkSpace>
       )}
     </NavBarContainer>

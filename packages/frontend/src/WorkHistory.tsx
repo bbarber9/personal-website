@@ -13,16 +13,19 @@ export const WorkHistory = (props: WorkHistoryProps): JSX.Element => {
   return (
     <>
       {workHistoryItems.map((company) => (
-        <>
+        <div key={company.name}>
           <h3>
             <a href={company.link} target="_blank" rel="noreferrer">
               {company.name}
             </a>
           </h3>
           {company.positions.map((position) => (
-            <WorkHistoryPositionSection position={position} />
+            <WorkHistoryPositionSection
+              position={position}
+              key={position.name}
+            />
           ))}
-        </>
+        </div>
       ))}
     </>
   );

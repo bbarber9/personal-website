@@ -39,8 +39,8 @@ export const WorkHistoryPositionSection = ({
         </PositionTimestamp>
       </PositionHeader>
       <AchievementSection expanded={expanded}>
-        {achievements.map((ach) => (
-          <li>{ach}</li>
+        {achievements.map((ach, index) => (
+          <li key={`${name}-${index}`}>{ach}</li>
         ))}
       </AchievementSection>
     </>
