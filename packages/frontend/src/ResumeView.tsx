@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { LINKEDIN_LINK } from "./constants";
 import { WorkHistory } from "./WorkHistory";
 
 interface ResumeViewProps {}
@@ -7,6 +8,11 @@ interface ResumeViewProps {}
 export const ResumeView = (props: ResumeViewProps): JSX.Element => {
   return (
     <>
+      <h2>Contact Me</h2>
+      <p>
+        If you would like to contact me, please reach out on{" "}
+        <a href={LINKEDIN_LINK}>LinkedIn</a>.
+      </p>
       <h2 id="professional-summary">Professional Summary</h2>
       <p>
         Driven software engineer with a passion for user experience, design,

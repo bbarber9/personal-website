@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link as RouterLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { SideDrawer } from "./SideDrawer";
 import { MOBILE_THRESHOLD } from "./constants";
@@ -37,6 +37,7 @@ const LinkSpace = styled.div`
   grid-template-columns: auto auto;
   grid-column-gap: 30px;
   padding-right: 10px;
+  font-size: 20px;
 `;
 
 const HamButton = styled.button`
@@ -68,7 +69,7 @@ const MenuHeader = styled.div`
   flex-direction: row;
   padding: 10px;
   font-size: 24px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.primary.base};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary.base};
 `;
 
 const MenuItem = styled.div`
@@ -77,10 +78,6 @@ const MenuItem = styled.div`
   flex-direction: row;
   padding-left: 10px;
   font-size: 24px;
-`;
-
-const Link = styled(RouterLink)`
-  font-size: 20px;
 `;
 
 export const NavBar = (props: NavBarProps): JSX.Element => {

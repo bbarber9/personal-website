@@ -33,7 +33,6 @@ const FlexHeader = styled.div`
 `;
 
 const FlexTitle = styled.h1`
-  margin: 10px;
   @media (max-width: ${() => MOBILE_THRESHOLD}px) {
     justify-self: center;
     align-self: center;
@@ -57,7 +56,7 @@ export const AboutView = (props: AboutViewProps): JSX.Element => {
       </FlexHeader>
       <LargeGreenSection>
         I'm a computer nerd who loves to make people's lives easier with
-        software.
+        technology.
       </LargeGreenSection>
       <h2>I graduated from Brigham Young University 🎓</h2>
       <p>
@@ -70,7 +69,7 @@ export const AboutView = (props: AboutViewProps): JSX.Element => {
       <p>
         I love making websites because they can be consumed on almost any
         device! It's the easiest way to get your content to as many people as
-        possible. I love learning and the web is always giving me new things to
+        possible. I love learning and the web always gives me new things to
         learn and master.
       </p>
       <h2>I love tech 🤖</h2>
@@ -83,8 +82,8 @@ export const AboutView = (props: AboutViewProps): JSX.Element => {
       <h2>I love open source 🐙</h2>
       <p>
         I believe that open source software makes the world go 'round. If I can,
-        I like to share things I make with the world, or make the things that
-        are already available just a little bit better.
+        I like to share things I make with the world, or make things that are
+        already available just a little bit better.
       </p>
     </>
   );
