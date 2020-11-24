@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { SiReact, SiTypescript, SiStyledComponents } from "react-icons/si";
-import { GITHUB_LINK } from "./constants";
+import { GITHUB_THIS_SITE_LINK } from "./constants";
 
 interface TechCreditsProps {}
 
@@ -49,7 +49,7 @@ export const TechCredits = (props: TechCreditsProps): JSX.Element => {
           <SiStyledComponents />
         </CreditIcon>
       </CreditContainer>
-      <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
+      <a href={GITHUB_THIS_SITE_LINK} target="_blank" rel="noreferrer">
         View the code on GitHub
       </a>
     </Container>

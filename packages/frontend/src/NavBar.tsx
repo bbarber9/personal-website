@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { SideDrawer } from "./SideDrawer";
-import { MOBILE_THRESHOLD } from "./constants";
+import { GITHUB_LINK, LINKEDIN_LINK, MOBILE_THRESHOLD } from "./constants";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 interface NavBarProps {}
 interface NavBarContainerProps {
@@ -33,11 +34,20 @@ const LogoText = styled.span`
 `;
 
 const LinkSpace = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 30px;
+  display: flex;
   padding-right: 10px;
   font-size: 20px;
+
+  & svg {
+    font-size: 24px;
+  }
+
+  & > * {
+    margin-right: 30px;
+    :last-child {
+      margin-right: 0px;
+    }
+  }
 `;
 
 const HamButton = styled.button`
@@ -138,6 +148,16 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
               </MenuItem>
             );
           })}
+          <MenuItem>
+            <a href={LINKEDIN_LINK} target="blank" rel="noreferrer">
+              <SiLinkedin /> LinkedIn Profile
+            </a>
+          </MenuItem>
+          <MenuItem>
+            <a href={GITHUB_LINK} target="blank" rel="noreferrer">
+              <SiGithub /> GitHub Profile
+            </a>
+          </MenuItem>
         </MenuItemContainer>
       </SideDrawer>
       {useHamburger ? (
@@ -155,6 +175,12 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
           {links.map((link) => (
             <Link to={link[0]}>{link[1]}</Link>
           ))}
+          <a href={LINKEDIN_LINK} target="blank" rel="noreferrer">
+            <SiLinkedin />
+          </a>
+          <a href={GITHUB_LINK} target="blank" rel="noreferrer">
+            <SiGithub />
+          </a>
         </LinkSpace>
       )}
     </NavBarContainer>
