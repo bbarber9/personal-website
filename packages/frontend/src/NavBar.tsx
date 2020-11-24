@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link as RouterLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { SideDrawer } from "./SideDrawer";
+import { MOBILE_THRESHOLD } from "./constants";
 
 interface NavBarProps {}
 interface NavBarContainerProps {
@@ -77,8 +78,6 @@ const MenuItem = styled.div`
 const Link = styled(RouterLink)`
   font-size: 20px;
 `;
-
-const MOBILE_THRESHOLD = 768;
 
 export const NavBar = (props: NavBarProps): JSX.Element => {
   const [showShadow, setShowShadow] = useState(false);

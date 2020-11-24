@@ -5,6 +5,8 @@ import { NavBar } from "./NavBar";
 import { ResumeView } from "./ResumeView";
 import { AboutView } from "./AboutView";
 import { ColorPalette } from "./ColorPalette";
+import { TechCredits } from "./TechCredits";
+import { MOBILE_THRESHOLD, WIDESCREEN_THRESHOLD } from "./constants";
 
 interface LayoutProps {}
 
@@ -13,10 +15,10 @@ const CenterContentContainer = styled.div`
   min-height: 1px;
   display: grid;
   grid-template-columns: auto 1400px auto;
-  @media (max-width: 768px) {
+  @media (max-width: ${() => MOBILE_THRESHOLD}px) {
     grid-template-columns: 10px auto 10px;
   }
-  @media (max-width: 1920px) {
+  @media (max-width: ${() => WIDESCREEN_THRESHOLD}px) {
     grid-template-columns: 1fr 4fr 1fr;
   }
 `;
@@ -49,6 +51,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
                   <ResumeView />
                 </Route>
               </Switch>
+              <TechCredits />
             </CenterContent>
           </CenterContentContainer>
         </MainArea>

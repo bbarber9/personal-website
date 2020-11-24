@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MOBILE_THRESHOLD } from "./constants";
 import ProfilePic from "./images/ProfilePic.jpeg";
 
 interface AboutViewProps {}
@@ -23,7 +24,7 @@ const FlexHeader = styled.div`
   display: grid;
   align-items: center;
   grid-template-areas: "title image";
-  @media (max-width: 768px) {
+  @media (max-width: ${() => MOBILE_THRESHOLD}px) {
     grid-template-areas:
       "title"
       "image";
@@ -33,7 +34,7 @@ const FlexHeader = styled.div`
 
 const FlexTitle = styled.h1`
   margin: 10px;
-  @media (max-width: 768px) {
+  @media (max-width: ${() => MOBILE_THRESHOLD}px) {
     justify-self: center;
     align-self: center;
   }
