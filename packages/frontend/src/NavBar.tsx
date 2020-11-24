@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
+import { SideDrawer } from "./SideDrawer";
 
 interface NavBarProps {}
 interface NavBarContainerProps {
@@ -12,7 +14,7 @@ const NavBarContainer = styled.nav<NavBarContainerProps>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10px;
+  padding: 0px 10px;
   height: 60px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.neutral.light4};
@@ -36,8 +38,55 @@ const LinkSpace = styled.div`
   padding-right: 10px;
 `;
 
+const HamButton = styled.button`
+  border: none;
+  background-color: ${({ theme }) => theme.colors.neutral.light4};
+  color: ${({ theme }) => theme.colors.primary.base};
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  :hover {
+    background-color: ${({ theme }) => theme.colors.neutral.light};
+  }
+`;
+
+const MenuItemContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 5px;
+`;
+
+const MenuHeader = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  font-size: 20px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary.base};
+`;
+
+const MenuItem = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+`;
+
+const Link = styled(RouterLink)`
+  font-size: 20px;
+`;
+
+const MOBILE_THRESHOLD = 768;
+
 export const NavBar = (props: NavBarProps): JSX.Element => {
   const [showShadow, setShowShadow] = useState(false);
+  const [useHamburger, setUseHamburger] = useState(
+    window.innerWidth < MOBILE_THRESHOLD
+  );
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  // Add shadow on scroll
   useEffect(() => {
     const listener = () => {
       if (window.scrollY <= 0) {
@@ -50,14 +99,57 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
     return () => {
       window.removeEventListener("scroll", listener);
     };
-  });
+  }, []);
+
+  // Switch to hamburger menu at certain width
+  useEffect(() => {
+    const listener = () => {
+      if (window.innerWidth < MOBILE_THRESHOLD) {
+        setUseHamburger(true);
+        return;
+      }
+      setUseHamburger(false);
+    };
+    window.addEventListener("resize", listener);
+    return () => {
+      window.removeEventListener("resize", listener);
+    };
+  }, []);
   return (
     <NavBarContainer shadow={showShadow}>
       <LogoText>breyton.dev</LogoText>
-      <LinkSpace>
-        <Link to="/">About</Link>
-        <Link to="/resume">Resume</Link>
-      </LinkSpace>
+      <SideDrawer
+        open={hamburgerOpen}
+        onClose={() => {
+          setHamburgerOpen(false);
+        }}
+      >
+        <MenuItemContainer>
+          <MenuHeader>Quick Links</MenuHeader>
+          <MenuItem>
+            <Link to="/">About</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to="/resume">Resume</Link>
+          </MenuItem>
+        </MenuItemContainer>
+      </SideDrawer>
+      {useHamburger ? (
+        <>
+          <HamButton
+            onClick={() => {
+              setHamburgerOpen(true);
+            }}
+          >
+            <FiMenu />
+          </HamButton>
+        </>
+      ) : (
+        <LinkSpace>
+          <Link to="/">About</Link>
+          <Link to="/resume">Resume</Link>
+        </LinkSpace>
+      )}
     </NavBarContainer>
   );
 };
