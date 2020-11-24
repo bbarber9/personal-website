@@ -35,7 +35,7 @@ const LogoText = styled.span`
 const LinkSpace = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  grid-column-gap: 10px;
+  grid-column-gap: 30px;
   padding-right: 10px;
 `;
 
@@ -44,8 +44,11 @@ const HamButton = styled.button`
   background-color: ${({ theme }) => theme.colors.neutral.light4};
   color: ${({ theme }) => theme.colors.primary.base};
   padding: 5px;
-  font-size: 20px;
+  font-size: 24px;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   :hover {
     background-color: ${({ theme }) => theme.colors.neutral.light};
@@ -64,7 +67,7 @@ const MenuHeader = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
-  font-size: 20px;
+  font-size: 24px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primary.base};
 `;
 
@@ -73,6 +76,7 @@ const MenuItem = styled.div`
   display: flex;
   flex-direction: row;
   padding-left: 10px;
+  font-size: 24px;
 `;
 
 const Link = styled(RouterLink)`

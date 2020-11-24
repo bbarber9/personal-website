@@ -35,5 +35,8 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration:none;
     color: ${({ theme }) => theme.colors.primary.base};
+    :hover {
+      text-decoration:underline;
+    }
   }
 `;
