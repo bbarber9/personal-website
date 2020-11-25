@@ -61,7 +61,7 @@ export function getWorkHistory(): WorkHistoryCompany[] {
       ],
     },
     {
-      name: "Church of Jesus Chris of Latter-Day Saints",
+      name: "Church of Jesus Christ of Latter-Day Saints",
       link: "https://www.churchofjesuschrist.org",
       positions: [
         {
