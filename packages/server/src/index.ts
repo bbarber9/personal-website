@@ -3,10 +3,8 @@ import path from "path";
 const app = express();
 const PORT = 13337;
 
-app.use(express.static(path.resolve(__dirname, "../../frontend/build")));
-
-app.get("/*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "../../frontend/build/index.html"));
+app.get("/api/test", (req, res) => {
+  res.send("HELLO WORLD");
 });
 
 app.listen(PORT, () => {
