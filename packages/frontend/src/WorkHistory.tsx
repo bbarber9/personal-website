@@ -1,18 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getWorkHistory } from "./dataUtils";
-import type { WorkHistoryCompany } from "./types";
+import { getWorkHistory } from "./serverAPI";
 import { WorkHistoryPositionSection } from "./WorkHistoryPosition";
+import type { BackendTypes } from "./types";
 
 export interface WorkHistoryProps {}
 
 export const WorkHistory = (props: WorkHistoryProps): JSX.Element => {
-  const [workHistoryItems, setWorkHistoryItems] = useState<
-    WorkHistoryCompany[]
-  >(getWorkHistory());
+  const [loading, setLoading] = useState(true);
+  const [workHistory, setWorkHistory] = useState<
+    BackendTypes.WorkHistoryCompany[]
+  >([]);
+
+  useEffect(() => {
+    getWorkHistory()
+      .then((res) => {
+        setWorkHistory(res.companies);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      {workHistoryItems.map((company) => (
+      {workHistory.map((company) => (
         <div key={company.name}>
           <h3>
             <a href={company.link} target="_blank" rel="noreferrer">
