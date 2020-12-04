@@ -5,8 +5,8 @@ import ProfilePic from "./images/ProfilePic.jpeg";
 
 interface AboutViewProps {}
 
-const LargeGreenSection = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary.base};
+const EmphasisSection = styled.div`
+  background-color: ${({ theme }) => theme.colors.primary.light4};
   width: 100%;
   padding: 20px;
   display: flex;
@@ -16,8 +16,9 @@ const LargeGreenSection = styled.div`
   font-weight: bold;
   font-size: 1.3rem;
   border-radius: 5px;
-  color: ${({ theme }) => theme.colors.neutral.light4};
-  box-shadow: -3px 3px ${({ theme }) => theme.colors.primary.dark2};
+  color: ${({ theme }) => theme.colors.primary.dark2};
+  border-left: 6px solid ${({ theme }) => theme.colors.primary.base};
+  border-right: 6px solid ${({ theme }) => theme.colors.primary.base};
 `;
 
 const FlexHeader = styled.div`
@@ -54,10 +55,10 @@ export const AboutView = (props: AboutViewProps): JSX.Element => {
         <FlexTitle>Hi! I'm Breyton 👋</FlexTitle>
         <FlexImg src={ProfilePic} />
       </FlexHeader>
-      <LargeGreenSection>
+      <EmphasisSection>
         I'm a computer nerd who loves to make people's lives easier with
         technology.
-      </LargeGreenSection>
+      </EmphasisSection>
       <h2>I graduated from Brigham Young University 🎓</h2>
       <p>
         I have a bachelor's degree in information technology. I spent my time
