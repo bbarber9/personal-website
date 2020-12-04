@@ -9,3 +9,8 @@ This website serves as both a personal website and as a demo for my skills as a 
 - React - My current frontend framework of choice. Pairs well with TypeScript
 - Styled Components - My current favorite CSS-in-JS framework
 - TypeScript - My favorite way to write JavaScript. Types greatly improve the readability and refactorability of my code
+
+### Backend
+
+- Express - A popular and simple HTTP Server with lots of plugins
+- MongoDB - A database I have never used before but was interested in
