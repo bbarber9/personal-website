@@ -1,12 +1,3 @@
-export interface WorkHistoryPosition {
-  name: string;
-  start: string;
-  end?: string;
-  achievements: string[];
-}
+import * as BackendTypes from "@bbarber9/personal-server/src/types";
 
-export interface WorkHistoryCompany {
-  name: string;
-  link: string;
-  positions: WorkHistoryPosition[];
-}
+export { BackendTypes };

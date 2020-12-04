@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import type { WorkHistoryPosition } from "./types";
+
+import type { BackendTypes } from "./types";
 
 interface WorkHistoryPositionProps {
-  position: WorkHistoryPosition;
+  position: BackendTypes.WorkHistoryPosition;
 }
 
 interface AchievementSectionProps {
