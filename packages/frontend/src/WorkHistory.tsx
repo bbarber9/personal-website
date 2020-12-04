@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getWorkHistory } from "./serverAPI";
 import { WorkHistoryPositionSection } from "./WorkHistoryPosition";
+import { Spinner } from "./Spinner";
 import type { BackendTypes } from "./types";
 
 export interface WorkHistoryProps {}
@@ -21,7 +22,7 @@ export const WorkHistory = (props: WorkHistoryProps): JSX.Element => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
