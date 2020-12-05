@@ -90,6 +90,16 @@ const MenuItem = styled.div`
   font-size: 24px;
 `;
 
+const IconLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Spacer = styled.span`
+  width: 10px;
+`;
+
 export const NavBar = (props: NavBarProps): JSX.Element => {
   const [showShadow, setShowShadow] = useState(false);
   const [useHamburger, setUseHamburger] = useState(
@@ -149,14 +159,13 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
             );
           })}
           <MenuItem>
-            <a href={LINKEDIN_LINK} target="blank" rel="noreferrer">
-              <SiLinkedin /> LinkedIn Profile
-            </a>
-          </MenuItem>
-          <MenuItem>
-            <a href={GITHUB_LINK} target="blank" rel="noreferrer">
-              <SiGithub /> GitHub Profile
-            </a>
+            <IconLink href={LINKEDIN_LINK} target="blank" rel="noreferrer">
+              <SiLinkedin />
+            </IconLink>
+            <Spacer />
+            <IconLink href={GITHUB_LINK} target="blank" rel="noreferrer">
+              <SiGithub />
+            </IconLink>
           </MenuItem>
         </MenuItemContainer>
       </SideDrawer>
@@ -175,12 +184,12 @@ export const NavBar = (props: NavBarProps): JSX.Element => {
           {links.map((link) => (
             <Link to={link[0]}>{link[1]}</Link>
           ))}
-          <a href={LINKEDIN_LINK} target="blank" rel="noreferrer">
+          <IconLink href={LINKEDIN_LINK} target="blank" rel="noreferrer">
             <SiLinkedin />
-          </a>
-          <a href={GITHUB_LINK} target="blank" rel="noreferrer">
+          </IconLink>
+          <IconLink href={GITHUB_LINK} target="blank" rel="noreferrer">
             <SiGithub />
-          </a>
+          </IconLink>
         </LinkSpace>
       )}
     </NavBarContainer>
